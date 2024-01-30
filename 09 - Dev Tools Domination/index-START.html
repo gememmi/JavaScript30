@@ -18,30 +18,53 @@
       p.style.fontSize = '50px';
     }
 
+
+      const p = document.querySelector('p');
     // Regular
+    console.log('hello');
 
     // Interpolated
+    console.log('Hello I am a %s string!', '💖')
 
     // Styled
+    console.log('%c I am some great text', 'font-size:50px; background:red');
 
     // warning!
-
+    console.warn('STOP')
     // Error :|
-
+    console.error('oh shit!')
     // Info
-
+    console.info('Cool fact!')
     // Testing
-
+    console.assert( 1===2, 'You did not select the right element')
     // clearing
-
+    console.clear();
     // Viewing DOM Elements
-
+     console.dir(p )
     // Grouping together
-
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`)
+      console.log(`${dog.name} is ${dog.age} yeasr old`)
+      console.groupEnd(`${dog.name}`)
+    })
     // counting
+    console.count('Em')
+    console.count('Em')
+    console.count('Em')
+    console.count('Em')
+    console.count('Em')
+    console.count('Em')
+
 
     // timing
-
+    console.time('Fetching data');
+    fetch('https://api.github.com/users/gememmi')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('Fetching data')
+        console.log(data)
+      })
   </script>
 </body>
 </html>
